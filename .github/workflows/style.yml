@@ -30,8 +30,5 @@ jobs:
           brew install clang-format
           pip3 install cmake_format==0.6.11 pyyaml
 
-      - name: configure
-        run: cmake -Stest -Bbuild
-
       - name: check style
-        run: cmake --build build --target check-format
+        run: make lint-check

@@ -27,11 +27,10 @@ jobs:
 
       - name: Build
         run: |
-          cmake -Sdocumentation -Bbuild
-          cmake --build build --target GenerateDocs
+          make doc
 
       - name: Publish
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/doxygen/html
+          publish_dir: ./build/Debug/doxygen/html
